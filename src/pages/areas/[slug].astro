@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import areas from '../../data/areas.json';
+import opportunities from '../../data/opportunities.json';
+import type { Area, Opportunity } from '../../types';
+export function getStaticPaths() {
+  return (areas as Area[]).map(area => ({params: {slug: area.id}, props: {area}}));
+}
+interface Props {area: Area}
+const {area} = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const matches = (opportunities as Opportunity[]).filter(o=>o.research_area_ids.includes(area.id) && o.verification_status==='verified');
+---
+<BaseLayout title={area.name} description={area.description}>
+  <div class="breadcrumbs"><a href={`${base}/areas/`}>Áreas científicas</a> / {area.name}</div>
+  <section class="pagehead"><span class="kicker">Campo científico</span><h1>{area.name}</h1><p>{area.description}</p></section>
+  <section class="section"><h2>Subespecialidades</h2><p>Esta primera taxonomía es orientativa y se ampliará con la comunidad.</p><div class="tags">{area.subareas.map(tag=><span class="tag">{tag}</span>)}</div></section>
+  <section class="section"><h2>Oportunidades vinculadas</h2>{matches.length ? <div class="cards">{matches.map(op=><a class="card" href={op.official_url} target="_blank" rel="noopener noreferrer"><span class="kicker">{op.type}</span><h3>{op.title}</h3><p>{op.description}</p><small>Fuente oficial ↗</small></a>)}</div> : <div class="notice">Todavía no hay convocatorias verificadas en esta especialidad. No significa que no existan: estamos construyendo el directorio. <a href={`${base}/contribuir/`} style="text-decoration:underline;color:#9de1c1">Ayuda a proponer una oportunidad</a>.</div>}</section>
+</BaseLayout>

@@ -1,0 +1,16 @@
+{
+  "id": "example-neuroimmunology-summer",
+  "title": "Ejemplo ficticio de verano en neuroinmunología (NO REAL)",
+  "type": "summer",
+  "institution_id": "example-institution",
+  "research_area_ids": [
+    "inmunologia",
+    "neurociencias"
+  ],
+  "level": [
+    "undergraduate"
+  ],
+  "official_url": "https://example.invalid/program",
+  "description": "Prueba técnica de estructura; nunca publicar.",
+  "verification_status": "pending"
+}

@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const repo = 'https://github.com/gitsselcc/genomic-atlas';
+---
+<BaseLayout title="Contribuir">
+  <section class="pagehead"><span class="kicker">Ciencia abierta</span><h1>Contribuye al atlas</h1><p>El proyecto crecerá mediante propuestas de convocatorias, sugerencias de nuevas subáreas y revisiones de información.</p></section>
+  <div class="steps"><div class="step"><strong>01</strong><h3>Encuentra una fuente</h3><p>Comparte el sitio oficial del programa, laboratorio, congreso o curso.</p></div><div class="step"><strong>02</strong><h3>Describe la oportunidad</h3><p>Indica institución, tema, nivel de estudios y fechas, solo si están verificadas.</p></div><div class="step"><strong>03</strong><h3>Revisamos la evidencia</h3><p>Las propuestas se validan antes de aparecer en el catálogo.</p></div></div>
+  <section class="section"><h2>Proponer una oportunidad</h2><p>Al publicar el repositorio, podrás usar la plantilla de GitHub Issues o enviar un Pull Request siguiendo CONTRIBUTING.md.</p><div class="actions"><a class="btn" href={`${repo}/issues/new/choose`} target="_blank" rel="noopener noreferrer">Abrir formulario en GitHub ↗</a><a class="btn secondary" href={`${repo}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer">Guía de colaboración ↗</a></div></section>
+</BaseLayout>

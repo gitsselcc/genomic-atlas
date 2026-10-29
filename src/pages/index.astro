@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AreaCard from '../components/AreaCard.astro';
+import areas from '../data/areas.json';
+import opportunities from '../data/opportunities.json';
+import type { Area } from '../types';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<BaseLayout title="Explora la ciencia" description="Una plataforma abierta para conocer campos científicos y encontrar oportunidades académicas de investigación.">
+  <section class="hero">
+    <span class="pill">◈ Proyecto abierto · v0.1.0</span>
+    <h1>Tu carrera puede llevarte a <span>muchos campos de la ciencia.</span></h1>
+    <p class="lead">Descubre dónde puede investigar una persona formada en ciencias genómicas. Explora especialidades y, conforme crezca el catálogo, encuentra estancias, summers, laboratorios, congresos y becas.</p>
+    <div class="actions"><a class="btn" href={`${base}/areas/`}>Explorar áreas científicas</a><a class="btn secondary" href={`${base}/oportunidades/`}>Ver oportunidades</a></div>
+    <div class="stats"><div class="stat"><strong>{areas.length}</strong><span>Macroáreas científicas</span></div><div class="stat"><strong>{areas.reduce((n,a)=>n+a.subareas.length,0)}</strong><span>Subespecialidades iniciales</span></div><div class="stat"><strong>{opportunities.length}</strong><span>Oportunidades publicadas</span></div></div>
+  </section>
+  <section class="section">
+    <span class="kicker">Exploración científica</span><h2>Empieza por tu curiosidad</h2>
+    <p>La genómica conecta disciplinas que a primera vista parecen muy diferentes. Esta taxonomía está en construcción y admite sugerencias.</p>
+    <div class="cards">{(areas as Area[]).slice(0,6).map(area => <AreaCard area={area} />)}</div>
+    <div class="actions"><a class="btn secondary" href={`${base}/areas/`}>Ver las 15 áreas →</a></div>
+  </section>
+  <section class="section"><span class="kicker">Para la comunidad</span><h2>Un catálogo verificable, no una lista abandonada</h2><div class="steps"><div class="step"><strong>01</strong><h3>Explora</h3><p>Conoce campos, subespecialidades y métodos.</p></div><div class="step"><strong>02</strong><h3>Encuentra</h3><p>Filtra oportunidades de acuerdo con tu formación e intereses.</p></div><div class="step"><strong>03</strong><h3>Colabora</h3><p>Propón fuentes y ayuda a mantener la información vigente.</p></div></div></section>
+</BaseLayout>

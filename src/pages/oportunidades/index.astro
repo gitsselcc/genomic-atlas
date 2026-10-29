@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import areas from '../../data/areas.json';
+import opportunities from '../../data/opportunities.json';
+import institutions from '../../data/institutions.json';
+import type {Opportunity, Institution} from '../../types';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const verified = (opportunities as Opportunity[]).filter(o=>o.verification_status === 'verified');
+const kindLabels: Record<string,string> = {summer:'Summer research', research_stay:'Estancia',research_year:'Año de investigación',congress:'Congreso',seminar:'Seminario',workshop:'Taller',course:'Curso/escuela',fellowship:'Fellowship',mobility:'Movilidad'};
+---
+<BaseLayout title="Oportunidades">
+  <section class="pagehead"><span class="kicker">Directorio en construcción</span><h1>Oportunidades académicas</h1><p>Busca convocatorias, programas y actividades. Solo publicaremos registros con enlaces oficiales; cada convocatoria tendrá su edición y fechas propias.</p></section>
+  <div class="filters">
+    <label><span class="sr-only">Texto de búsqueda</span><input class="field" id="op-search" placeholder="Programa, institución o tema…" type="search" /></label>
+    <label><span class="sr-only">Área científica</span><select class="field" id="op-area"><option value="">Todas las áreas</option>{areas.map(a=><option value={a.id}>{a.name}</option>)}</select></label>
+    <label><span class="sr-only">Tipo de oportunidad</span><select class="field" id="op-type"><option value="">Todos los tipos</option>{Object.entries(kindLabels).map(([value,label])=><option value={value}>{label}</option>)}</select></label>
+  </div>
+  <p id="op-count" class="subtle" aria-live="polite">{verified.length} oportunidades verificadas</p>
+  <div class="cards" id="op-grid">
+    {verified.map(o => {
+      const institution = (institutions as Institution[]).find(i=>i.id===o.institution_id);
+      return <a class="card op-entry" data-query={`${o.title} ${o.description} ${institution?.name ?? ''}`.toLowerCase()} data-areas={o.research_area_ids.join(' ')} data-type={o.type} href={o.official_url} target="_blank" rel="noopener noreferrer"><span class="kicker">{kindLabels[o.type] ?? o.type}</span><h3>{o.title}</h3><p>{institution?.name ?? 'Institución por confirmar'} · {o.description}</p><small>Consultar fuente oficial ↗</small></a>;
+    })}
+  </div>
+  <div class="notice" id="op-empty">La base de oportunidades verificadas todavía está vacía. Puedes explorar las <a style="color:#9de1c1;text-decoration:underline" href={`${base}/areas/`}>áreas científicas</a> o <a style="color:#9de1c1;text-decoration:underline" href={`${base}/contribuir/`}>proponer una convocatoria</a>.</div>
+</BaseLayout>
+<script>
+const search = document.querySelector<HTMLInputElement>('#op-search');
+const area = document.querySelector<HTMLSelectElement>('#op-area');
+const type = document.querySelector<HTMLSelectElement>('#op-type');
+const items = [...document.querySelectorAll<HTMLElement>('.op-entry')];
+const empty = document.querySelector<HTMLElement>('#op-empty');
+const counter = document.querySelector<HTMLElement>('#op-count');
+const filter = () => {
+  const q = (search?.value || '').toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  let num=0;
+  items.forEach(el=>{
+    const normalized = (el.dataset.query || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    const matches = normalized.includes(q) && (!area?.value || (el.dataset.areas || '').split(' ').includes(area.value)) && (!type?.value || el.dataset.type===type.value);
+    el.hidden=!matches;
+    if(matches) num++;
+  });
+  if(empty) empty.hidden=num>0;
+  if(counter) counter.textContent=`${num} oportunidades verificadas`;
+};
+[search,area,type].forEach(x=>x?.addEventListener('input',filter));
+filter();
+</script>
+<style>.op-entry[hidden],.notice[hidden]{display:none}</style>

@@ -1,0 +1,18 @@
+{
+  "name": "genomic-atlas",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Atlas abierto de áreas científicas y oportunidades de investigación para estudiantes de ciencias genómicas.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:data": "python scripts/validate_data.py",
+    "test:data": "python -m unittest discover -s tests -v"
+  },
+  "dependencies": {
+    "astro": "^6.0.0"
+  },
+  "engines": {"node": ">=22.12.0"}
+}

@@ -1,0 +1,50 @@
+name: Proponer una oportunidad
+about: Sugerir una estancia, summer, laboratorio, congreso, seminario o beca
+labels: ["propuesta", "datos"]
+body:
+  - type: markdown
+    attributes:
+      value: "Comparte una fuente oficial. La propuesta será revisada antes de publicarse."
+  - type: input
+    id: name
+    attributes:
+      label: Nombre de la oportunidad
+      placeholder: Nombre oficial del programa
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL oficial
+      placeholder: https://institucion.edu/...
+    validations:
+      required: true
+  - type: input
+    id: institution
+    attributes:
+      label: Institución y país
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Tipo de oportunidad
+      options:
+        - Summer research
+        - Estancia de investigación
+        - Año de investigación
+        - Laboratorio receptor potencial
+        - Congreso
+        - Seminario
+        - Curso o taller
+        - Beca o movilidad
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Tema, elegibilidad, fechas y financiamiento
+      description: Indica qué datos has confirmado y cuáles faltan. No incluyas datos personales.
+    validations:
+      required: true

@@ -1,0 +1,21 @@
+name: Proponer área o subespecialidad
+about: Sugerir una corrección de taxonomía
+labels: ["taxonomía"]
+body:
+  - type: input
+    id: area
+    attributes:
+      label: Nombre del campo o especialidad
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Definición y relación con otras áreas
+      description: Explica si es una nueva especialidad, una técnica transversal o un cambio en la jerarquía.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Fuentes opcionales

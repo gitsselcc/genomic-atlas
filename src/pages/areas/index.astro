@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AreaCard from '../../components/AreaCard.astro';
+import areas from '../../data/areas.json';
+import type { Area } from '../../types';
+---
+<BaseLayout title="Áreas científicas">
+  <section class="pagehead"><span class="kicker">Mapa del conocimiento</span><h1>Explora áreas de investigación</h1><p>Quince macroáreas para orientarte. Una misma investigación puede estar conectada con varios campos y metodologías.</p></section>
+  <label class="sr-only" for="area-search">Buscar área o subespecialidad</label>
+  <input class="field" id="area-search" type="search" placeholder="Busca neuroinmunología, paleogenómica, agricultura…" autocomplete="off" />
+  <p class="subtle" id="area-count" aria-live="polite">{areas.length} áreas disponibles</p>
+  <div class="cards" id="areas-grid">{(areas as Area[]).map(area => <div class="area-entry" data-search={`${area.name} ${area.description} ${area.subareas.join(' ')}`.toLowerCase()}><AreaCard area={area}/></div>)}</div>
+  <p class="notice" id="area-empty" hidden>No se encontraron áreas coincidentes. Puedes sugerir una nueva especialidad desde la sección Contribuir.</p>
+</BaseLayout>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#area-search');
+  const entries = [...document.querySelectorAll<HTMLElement>('.area-entry')];
+  const counter = document.querySelector<HTMLElement>('#area-count');
+  const empty = document.querySelector<HTMLElement>('#area-empty');
+  input?.addEventListener('input', () => {
+    const search = (input.value || '').toLocaleLowerCase('es').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    let visible = 0;
+    entries.forEach(entry => {
+      const value = (entry.dataset.search || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      const match = value.includes(search);
+      entry.hidden = !match;
+      if(match) visible++;
+    });
+    if(counter) counter.textContent = `${visible} áreas disponibles`;
+    if(empty) empty.hidden = visible !== 0;
+  });
+</script>
+<style>.area-entry{display:contents}.area-entry[hidden]{display:none}.notice[hidden]{display:none}</style>

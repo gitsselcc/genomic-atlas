@@ -1,0 +1,212 @@
+[
+  {
+    "id": "biomedicina-precision",
+    "name": "Biomedicina y medicina de precisión",
+    "description": "Investigación de las bases moleculares de la salud, la enfermedad y las terapias personalizadas.",
+    "subareas": [
+      "Genómica clínica",
+      "Farmacogenómica",
+      "Enfermedades raras",
+      "Terapia génica",
+      "Medicina regenerativa",
+      "Genómica cardiovascular",
+      "Diagnóstico molecular"
+    ]
+  },
+  {
+    "id": "inmunologia",
+    "name": "Inmunología e inmunogenómica",
+    "description": "Sistemas inmunitarios, defensa, inflamación y sus determinantes genéticos.",
+    "subareas": [
+      "Inmunogenómica",
+      "Neuroinmunología",
+      "Inmunología evolutiva",
+      "Autoinmunidad",
+      "Vacunología",
+      "Inmunoterapia",
+      "Inmunosenescencia"
+    ]
+  },
+  {
+    "id": "neurociencias",
+    "name": "Neurociencias y neurogenómica",
+    "description": "Desarrollo, función y alteraciones del sistema nervioso desde perspectivas moleculares y genómicas.",
+    "subareas": [
+      "Neurogenómica",
+      "Neuroinflamación",
+      "Neuroepigenética",
+      "Neurodesarrollo",
+      "Neurodegeneración",
+      "Neuropsiquiatría",
+      "Microglía"
+    ]
+  },
+  {
+    "id": "oncologia",
+    "name": "Oncología y genómica del cáncer",
+    "description": "Evolución tumoral, variación genética, microambiente e intervenciones contra el cáncer.",
+    "subareas": [
+      "Genómica del cáncer",
+      "Inmunología tumoral",
+      "Evolución clonal",
+      "Metástasis",
+      "Biomarcadores",
+      "Oncología computacional",
+      "Terapias celulares"
+    ]
+  },
+  {
+    "id": "microbiologia-infecciones",
+    "name": "Microbiología y enfermedades infecciosas",
+    "description": "Microorganismos y sus interacciones con hospederos, comunidades y ambientes.",
+    "subareas": [
+      "Genómica microbiana",
+      "Virología",
+      "Resistencia antimicrobiana",
+      "Microbioma humano",
+      "Interacción hospedero-patógeno",
+      "Parasitología",
+      "Epidemiología genómica"
+    ]
+  },
+  {
+    "id": "genetica-humana",
+    "name": "Genética humana y salud pública",
+    "description": "Variación genética humana, epidemiología molecular y salud poblacional.",
+    "subareas": [
+      "GWAS",
+      "Riesgo poligénico",
+      "Genética de poblaciones humanas",
+      "Epidemiología genética",
+      "Genómica poblacional",
+      "Diversidad genética",
+      "Salud pública genómica"
+    ]
+  },
+  {
+    "id": "biologia-celular",
+    "name": "Biología molecular, celular y del desarrollo",
+    "description": "Organización, regulación, diferenciación y funcionamiento de sistemas celulares.",
+    "subareas": [
+      "Epigenética",
+      "Epitranscriptómica",
+      "Biología del ARN",
+      "Células madre",
+      "Biología del desarrollo",
+      "Reparación del ADN",
+      "Envejecimiento"
+    ]
+  },
+  {
+    "id": "evolucion-paleogenomica",
+    "name": "Evolución, filogenómica y paleogenómica",
+    "description": "Historia evolutiva de genes, organismos, funciones y poblaciones.",
+    "subareas": [
+      "Genómica evolutiva",
+      "Filogenómica",
+      "Paleogenómica",
+      "ADN antiguo",
+      "Arqueogenética",
+      "Evolución experimental",
+      "Evo-Devo"
+    ]
+  },
+  {
+    "id": "ecologia-conservacion",
+    "name": "Ecología, biodiversidad y conservación",
+    "description": "Estudio y preservación de biodiversidad desde escalas moleculares hasta ecosistemas.",
+    "subareas": [
+      "Genómica de la conservación",
+      "ADN ambiental",
+      "Ecología molecular",
+      "Restauración ecológica",
+      "Genómica del paisaje",
+      "Adaptación climática",
+      "Conservación comunitaria"
+    ]
+  },
+  {
+    "id": "agricultura-plantas",
+    "name": "Agricultura, plantas y seguridad alimentaria",
+    "description": "Genética vegetal, ecosistemas agrícolas y sistemas alimentarios resilientes.",
+    "subareas": [
+      "Genómica vegetal",
+      "Agroecología",
+      "Seguridad alimentaria",
+      "Inmunidad vegetal",
+      "Microbioma del suelo",
+      "Rizobios y simbiosis",
+      "Domesticación de cultivos"
+    ]
+  },
+  {
+    "id": "ambiente-sostenibilidad",
+    "name": "Ciencias ambientales y sostenibilidad",
+    "description": "Aplicación de biología molecular a desafíos ambientales y climáticos.",
+    "subareas": [
+      "Genómica ambiental",
+      "Biorremediación",
+      "Biodegradación de plásticos",
+      "Ecotoxicogenómica",
+      "Ciclos biogeoquímicos",
+      "Bioenergía",
+      "Microbiología ambiental"
+    ]
+  },
+  {
+    "id": "biotecnologia-sintetica",
+    "name": "Biotecnología y biología sintética",
+    "description": "Ingeniería de sistemas biológicos, organismos y biomoléculas para fines científicos y aplicados.",
+    "subareas": [
+      "Biología sintética",
+      "Ingeniería de proteínas",
+      "Biocatálisis",
+      "CRISPR",
+      "Ingeniería metabólica",
+      "Biomanufactura",
+      "Biotecnología farmacéutica"
+    ]
+  },
+  {
+    "id": "bioinformatica-ia",
+    "name": "Bioinformática, IA y genómica computacional",
+    "description": "Modelos, algoritmos y software para interpretar datos biológicos.",
+    "subareas": [
+      "Genómica computacional",
+      "Aprendizaje automático",
+      "Modelos fundacionales",
+      "Genómica generativa",
+      "Genética estadística",
+      "Integración multiómica",
+      "Biología de redes"
+    ]
+  },
+  {
+    "id": "interdisciplinaria",
+    "name": "Biología interdisciplinaria y campos emergentes",
+    "description": "Preguntas biológicas en la frontera con física, matemáticas, arqueología y sistemas complejos.",
+    "subareas": [
+      "Astrobiología",
+      "Paleoproteómica",
+      "Arqueología molecular",
+      "Biología matemática",
+      "Biofísica",
+      "Sistemas complejos",
+      "Genómica espacial"
+    ]
+  },
+  {
+    "id": "ciencia-sociedad",
+    "name": "Ciencia, sociedad y comunidades",
+    "description": "Investigación participativa, equidad científica y aplicaciones socialmente situadas.",
+    "subareas": [
+      "Ciencia participativa",
+      "Agroecología comunitaria",
+      "Bioética",
+      "Gobernanza de datos",
+      "Soberanía alimentaria",
+      "Ciencia regional",
+      "Transferencia tecnológica"
+    ]
+  }
+]
