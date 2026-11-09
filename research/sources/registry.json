@@ -1,0 +1,6 @@
+[
+ {"source_id":"unam-dgeci-movilidad","name":"UNAM - Movilidad estudiantil","url":"https://www.global.unam.mx/es/movilidad/estudiantil","source_type":"webpage","country":"MX","languages":["es"],"areas":["all"],"keywords":["movilidad","convocatoria","intercambio","estudiantes","beca"],"active":true,"check_frequency":"daily"},
+ {"source_id":"unam-becas","name":"UNAM - Portal de becas","url":"https://www.becas.unam.mx/","source_type":"webpage","country":"MX","languages":["es"],"areas":["all"],"keywords":["beca","convocatoria","apoyo","estudiantes"],"active":true,"check_frequency":"daily"},
+ {"source_id":"nsf-undergraduates","name":"US National Science Foundation - Undergraduate opportunities","url":"https://www.nsf.gov/funding/undergraduates","source_type":"webpage","country":"US","languages":["en"],"areas":["all"],"keywords":["undergraduate","research","internship","fellowship","opportunity"],"active":true,"check_frequency":"weekly"},
+ {"source_id":"illinois-summer-research","name":"University of Illinois - Summer Undergraduate Research Opportunities","url":"https://researchops.web.illinois.edu/","source_type":"webpage","country":"US","languages":["en"],"areas":["all"],"keywords":["summer","undergraduate","research","program","opportunity"],"active":true,"check_frequency":"weekly"}
+]
