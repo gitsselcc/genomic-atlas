@@ -17,6 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Restore discovery history
+        uses: actions/cache@v4
+        with:
+          path: research/discovery/candidates.jsonl
+          key: genomic-atlas-discovery-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            genomic-atlas-discovery-
       - name: Run discovery
         run: python scripts/discovery/discover.py
       - name: Upload candidate results
